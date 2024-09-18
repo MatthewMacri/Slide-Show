@@ -1,0 +1,87 @@
+/*This code creates a visually appealing and interactive image slider with smooth transitions and navigation controls.*/
+
+
+
+/*Position Relative vs Absolute
+
+https://kolosek.com/css-position-relative-vs-position-absolute/#:~:text=Relative%20%2D%20the%20element%20is%20positioned,related%20to%20the%20browser%20window.
+
+A relative positioned element can be moved to any direction by using the properties(offset properties) 
+such as left, right, top and bottom. And the values provided in those properties is calculated based 
+on the position where the element sits. And the surrounding elements of a relative positioned element 
+is aware of its existence in the document flow. So, they don’t consume the space of the relative positioned 
+element after it has been moved to a different position on the page.
+
+In absolute positioned element, it is the opposite. The surrounding elements consume the space of 
+the absolute positioned element cause they assume that the absolute positioned element do not 
+exist in the document flow. And an absolute positioned element can be moved in a same way you’d 
+move a relative positioned element using properties (offset properties) such as left, right, top and bottom, 
+but the values provided in those properties are calculated based upon its closest ancestor’s container 
+that has a relative position, meaning if the parent of the absolute positioned element has “position: 
+relative”, then giving the absolute positioned child a value of “top: 0px” will move the child towards 
+the top border of the relative positioned ancestor. If no ancestor has a relative position. 
+Then the absolute positioned element will make the body element its relative positioned ancestor. 
+And use the body element as its container.
+
+*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+/*This imports the “Varela Round” font from Google Fonts.*/
+
+html, body { background: #333 }
+/*Sets the background color of the entire page to a dark gray.*/
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+/*Defines the main container for the slides with a fixed width and height, centered on the page.*/
+/*The position: relative property in CSS is used to position an element relative to its normal position in the document flow. Here’s a more detailed explanation:
+
+Normal Flow: When an element is set to position: relative, it remains in the normal document flow, meaning it occupies space as it normally would.*/
+
+
+
+.slides * {
+    user-select: none;
+	/*The user-select: none property in CSS is used to prevent users from selecting text within an element. This can be useful in various scenarios, 
+	such as when you want to disable text selection on buttons, images, or other interactive elements to improve the user experience.*/
+    -ms-user-select: none;
+	/*The -ms-user-select: none; property is a vendor prefix for the user-select property, specifically for Internet Explorer and older versions of Microsoft Edge. 
+	It prevents users from selecting text within an element, ensuring compatibility with Microsoft’s browsers.*/
+    -moz-user-select: none;
+	/*The -moz-user-select: none; property is a vendor prefix for the user-select property, specifically for Mozilla Firefox. 
+	It prevents users from selecting text within an element, ensuring compatibility with Firefox browsers.*/
+    -khtml-user-select: none;
+	/* Prevents text selection in KHTML-based browsers.*/
+    -webkit-user-select: none;
+	/* Prevents text selection in WebKit-based browsers like Safari*/
+    -webkit-touch-callout: none;
+	/*The -webkit-touch-callout: none; CSS property is used to disable the default callout menu that appears when you tap and hold on an element in WebKit-based browsers, such as Safari on iOS devices. 
+	This can be useful for creating a more controlled user experience on touch devices.*/
+} 
+/*Prevents text selection within the slides.*/
+
+.slide-container { 
+    display: block; 
+}
+/*Ensures each slide container is displayed as a block element.*/
+
+.slides input { 
+    display: none; 
+}
+
+
+.slide {}
+
+
+
+ /*
+Understand '+', '>' and '~' symbols in CSS Selector
+https://techbrij.com/css-selector-adjacent-child-sibling
+ */
